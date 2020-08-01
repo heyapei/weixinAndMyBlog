@@ -9,8 +9,8 @@ package com.hyp.blog.pojo.blog.model;
 public enum JournalModalJournalTypeEnum {
 
 
-    QUTOUPIAO(1, "趣投票"),
-    HEYAPEI(0, "何亚培的日志");
+    QUTOUPIAO(1, "趣互动"),
+    HEYAPEI(0, "何亚培");
 
     /**
      * 状态码
