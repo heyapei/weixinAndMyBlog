@@ -57,7 +57,7 @@
                              th:data-lazy="${#strings.isEmpty(blogListVO?.journalCoverImg) == true?null:blogListVO?.journalCoverImg}" alt="封面图">
                     </div>
                     <div class="col-xs-7">
-                        <a th:href="@{'/go/showBlogContent/'+${blogListVO?.id}}" class="title" th:text="${blogListVO?.title}" target="_blank">
+                        <a th:href="@{'/b/showBlogContent/'+${blogListVO?.id}}" class="title" th:text="${blogListVO?.title}" target="_blank">
                         </a>
                         <div class="info">
                             <span class="avatar">

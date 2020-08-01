@@ -24,7 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @Description: TODO
  */
 @RestController
-@RequestMapping(value = {"/go"})
+@RequestMapping(value = {"/b"})
 @Slf4j
 public class BlogShowController {
 
