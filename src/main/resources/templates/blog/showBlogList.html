@@ -1,0 +1,133 @@
+<!--
+  @Description: TODO 日志的首页 即列表页面
+ 
+  @Author    何亚培
+  @Version   V1.0  
+  @Date      2020/8/1 12:17 
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>日志列表</title>
+
+    <script src="/static/res/bootstrap/js/jQuery.js"></script>
+    <!--引用公共的bootstrap的内容-->
+    <head th:include="/inc/iehtml5 :: iehtml5"></head>
+    <head th:include="/inc/commonutil/sweetAlert :: sweetAlert"></head>
+    <head th:include="/inc/bootstrapbasejs :: bootstrapbasejs"></head>
+    <head th:include="/inc/bootstrapbasecss :: bootstrapbasecss"></head>
+    <head th:include="/inc/commonutil/echarts :: echarts"></head>
+    <head th:include="/inc/commonutil/toastrutil :: toastr"></head>
+    <head th:include="/inc/commonutil/lazyImgLoading :: lazyImgLoading"></head>
+
+    <link rel="stylesheet" href="/static/page/blog/css/main.css">
+
+
+</head>
+<body>
+
+
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">趣互动</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2 hidden-xs">
+
+        </div>
+
+        <div class="col-sm-7">
+            <div class="blog-list">
+
+
+                <!--列表页面-->
+
+                <div class="blog-list-item clearfix">
+                    <div class="col-xs-5">
+                       <!-- <img src="/static/page/blog/img/blog.png">-->
+                        <img src="/static/res/lazyImgLoading/imglazyloadingtype1.gif"
+                             th:data-lazy="${weixinVoteUser?.getAvatarUrl()}">
+                    </div>
+                    <div class="col-xs-7">
+                        <a href="#" class="title">
+                            记录点滴，记录成长。用博客记录技术与经验的积累，在这里找到志同道合的朋友，编程的乐趣。
+                        </a>
+                        <div class="info">
+                            <span class="avatar">
+                                <img src="/static/page/blog/img/1.jpg" alt="作者头像">
+                            </span>
+                            <span>散人</span> |
+                            <span>2.8K</span>
+                            <span class="glyphicon glyphicon-thumbs-up blog-hot" aria-hidden="true"></span> |
+                            <span>5分钟前</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--列表页面 结束-->
+
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#">Prev</a>
+                                </li>
+                                <li>
+                                    <a href="#">1</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#">3</a>
+                                </li>
+                                <li>
+                                    <a href="#">4</a>
+                                </li>
+                                <li>
+                                    <a href="#">5</a>
+                                </li>
+                                <li>
+                                    <a href="#">Next</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3 hidden-xs">
+            <div class="search-bar">
+                <form role="form">
+                    <div class="form-group has-feedback">
+                        <label class="sr-only" for="Search">Search：</label>
+                        <input type="search" class="form-control" placeholder="搜索" id="Search">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="side-bar-card clearfix">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div th:include="inc/foot/simplefoot :: foot"></div>
+</div>
+
+</body>
+</html>

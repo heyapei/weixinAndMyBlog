@@ -1,0 +1,166 @@
+<!--
+  @Description: TODO 
+ 
+  @Author    何亚培
+  @Version   V1.0  
+  @Date      2020/8/1 13:23 
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>日志列表</title>
+
+    <script src="/static/res/bootstrap/js/jQuery.js"></script>
+    <!--引用公共的bootstrap的内容-->
+    <head th:include="/inc/iehtml5 :: iehtml5"></head>
+    <head th:include="/inc/commonutil/sweetAlert :: sweetAlert"></head>
+    <head th:include="/inc/bootstrapbasejs :: bootstrapbasejs"></head>
+    <head th:include="/inc/bootstrapbasecss :: bootstrapbasecss"></head>
+    <head th:include="/inc/commonutil/echarts :: echarts"></head>
+    <head th:include="/inc/commonutil/toastrutil :: toastr"></head>
+    <head th:include="/inc/commonutil/lazyImgLoading :: lazyImgLoading"></head>
+    <link rel="stylesheet" href="/static/page/blog/css/main.css">
+
+
+</head>
+<body>
+
+<!--引入返回顶部按钮-->
+<div th:include="/inc/commonutil/backtotop :: backtotop"></div>
+
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">趣互动</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-sm-12">
+        <h1 class="blog-title">记录点滴，记录成长。用博客记录技术与经验的积累，在这里找到志同道合的朋友，编程的乐趣。</h1>
+        <div class="blog-info">
+            <span class="avatar"><img src="image/v2-2d45613b0fb8cdd36f53c3b31d0c6ee8_hd.jpg" alt="avatar"></span>
+            <span>散人</span> |
+            <span>2.8K热度</span> |
+            <span>5分钟前</span>
+            <label class="label label-info">编程</label>
+            <label class="label label-warning">博客</label>
+            <label class="label label-success">Java</label>
+        </div>
+        <div class="blog-content">
+            <blockquote>
+                <p>博客生活，记录点滴</p>
+            </blockquote>
+            <img src="image/blog.png">
+
+            <div >
+                <p>
+                    Think Different
+                </p>
+                <p>
+                    Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.
+                </p>
+                <p>
+                    <br />
+                </p>
+                <p>
+                    <br />
+                </p>
+                <p style="text-align:center;">
+                    发射点发射点
+                </p>
+                <p style="text-align:center;">
+                    <br />
+                </p>
+                <p style="text-align:center;">
+                    <img src="https://review.chinabrands.cn/chinabrands_cn/seo/image/20190218/Bing%20-%20%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.png" alt="" />
+                </p>
+                <p>
+                    - Apple Inc.
+                </p>
+                <p>
+                    Think Different
+                </p>
+                <p>
+                    Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.
+                </p>
+                <p>
+                    <br />
+                </p>
+                <p>
+                    <br />
+                </p>
+                <p style="text-align:center;">
+                    发射点发射点
+                </p>
+                <p style="text-align:center;">
+                    <br />
+                </p>
+                <p style="text-align:center;">
+                    <img src="https://review.chinabrands.cn/chinabrands_cn/seo/image/20190218/Bing%20-%20%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.png" alt="" />
+                </p>
+                <p>
+                    - Apple Inc.
+                </p>
+                <p>
+                    Think Different
+                </p>
+                <p>
+                    Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.
+                </p>
+                <p>
+                    <br />
+                </p>
+                <p>
+                    <br />
+                </p>
+                <p style="text-align:center;">
+                    发射点发射点
+                </p>
+                <p style="text-align:center;">
+                    <br />
+                </p>
+                <p style="text-align:center;">
+                    <img src="https://review.chinabrands.cn/chinabrands_cn/seo/image/20190218/Bing%20-%20%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.png" alt="" />
+                </p>
+                <p>
+                    - Apple Inc.
+                </p>
+                <p>
+                    Think Different
+                </p>
+                <p>
+                    Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.
+                </p>
+                <p>
+                    <br />
+                </p>
+                <p>
+                    <br />
+                </p>
+                <p style="text-align:center;">
+                    发射点发射点
+                </p>
+                <p style="text-align:center;">
+                    <br />
+                </p>
+                <p style="text-align:center;">
+                    <img src="https://review.chinabrands.cn/chinabrands_cn/seo/image/20190218/Bing%20-%20%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.png" alt="" />
+                </p>
+                <p>
+                    - Apple Inc.
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div th:include="inc/foot/simplefoot :: foot"></div>
+</div>
+
+</body>
+</html>

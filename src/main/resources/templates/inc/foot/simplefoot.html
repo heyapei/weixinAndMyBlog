@@ -1,0 +1,51 @@
+<!--
+  @Description: TODO 
+ 
+  @Author    何亚培
+  @Version   V1.0  
+  @Date      2020/6/23 20:43 
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+</head>
+<body>
+<div class="container" th:fragment="foot">
+    <div class="modal-footer">
+        <style>
+            .divBeiAn .imgs {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .divBeiAn .infos {
+                display: inline-block;
+            }
+        </style>
+        <address class="text-center">
+            <p>Copyright © [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]]. All Rights Reserved
+                <a href="http://www.yapei.cool" th:alt="作品主页" th:title="作品主页">yapei.cool</a></p>
+            <p style="display: inline">
+
+            <div class="divBeiAn">
+                <div class="imgs"><img src="/static/beian/beianicon.png" alt="备案图片"></div>
+                <div class="infos">
+                    <a target="_blank" th:alt="公安备案信息" th:title="公安备案信息" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41152802000105"
+                       style="text-decoration:none;">
+                        豫公网安备 41152802000105号
+                    </a>
+                </div>
+
+                <div class="infos">
+                    <a alt="ICP/IP备案信息" title="ICP/IP备案信息" href="http://www.beian.miit.gov.cn/" target="_blank" style="text-decoration:none;">
+                        豫ICP备20015449号
+                    </a>
+                </div>
+            </div>
+        </address>
+    </div>
+</div>
+
+</body>
+</html>
+
