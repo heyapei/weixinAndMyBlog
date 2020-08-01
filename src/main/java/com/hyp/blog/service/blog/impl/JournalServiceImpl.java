@@ -116,6 +116,8 @@ public class JournalServiceImpl implements JournalService {
         criteria.andEqualTo("journalType", blogListQuery.getJournalType());
         /*排序*/
         example.orderBy("showOrder").desc();
+        example.orderBy("createTime").desc();
+        example.orderBy("updateTime").desc();
         PageHelper.startPage(blogListQuery.getPageNum(), blogListQuery.getPageSize());
         List<Journal> journalList = null;
         try {
