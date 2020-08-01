@@ -18,7 +18,6 @@ public class MyDateUtil {
     private static final Object object = new Object();
 
 
-
     /**
      * 获取每天的开始时间 00:00:00:00
      *
@@ -149,7 +148,7 @@ public class MyDateUtil {
             }
         } catch (ParseException e) {
             e.printStackTrace();
-            log.error("10位13位时间戳转Date错误，错误原因：{}",e.toString());
+            log.error("10位13位时间戳转Date错误，错误原因：{}", e.toString());
         }
         return date;
     }
@@ -344,7 +343,7 @@ public class MyDateUtil {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    log.error("获取日期字符串的日期风格错误，错误原因：{}",e.toString());
+                    log.error("获取日期字符串的日期风格错误，错误原因：{}", e.toString());
                 }
             }
             if (dateTmp != null) {
@@ -384,7 +383,7 @@ public class MyDateUtil {
                 myDate = getDateFormat(pattern).parse(date);
             } catch (Exception e) {
                 e.printStackTrace();
-                log.error("将日期字符串转化为日期，错误原因：{}",e.toString());
+                log.error("将日期字符串转化为日期，错误原因：{}", e.toString());
             }
         }
         return myDate;
@@ -419,7 +418,7 @@ public class MyDateUtil {
                 dateString = getDateFormat(pattern).format(date);
             } catch (Exception e) {
                 e.printStackTrace();
-                log.error("将日期转化为日期字符串，错误原因：{}",e.toString());
+                log.error("将日期转化为日期字符串，错误原因：{}", e.toString());
             }
         }
         return dateString;
@@ -914,6 +913,80 @@ public class MyDateUtil {
      */
     public static SimpleLunarCalendar getSimpleLunarCalendar(Date date) {
         return new SimpleLunarCalendar(date);
+    }
+
+
+    private static final long ONE_MINUTE = 60000L;
+    private static final long ONE_HOUR = 3600000L;
+    private static final long ONE_DAY = 86400000L;
+    private static final long ONE_WEEK = 604800000L;
+
+    private static final String ONE_SECOND_AGO = "秒前";
+    private static final String ONE_MINUTE_AGO = "分钟前";
+    private static final String ONE_HOUR_AGO = "小时前";
+    private static final String ONE_DAY_AGO = "天前";
+    private static final String ONE_MONTH_AGO = "月前";
+    private static final String ONE_YEAR_AGO = "年前";
+
+    /**
+     * 计算两个时间的差值（开始时间到结束时间） 格式化后的 显示为是几秒前，几分钟前....
+     *
+     * @param startDate 开始时间
+     * @param endDate   结束时间
+     * @return 格式化的语言
+     */
+    public static String formatTwoDateFormat(Date startDate, Date endDate) {
+        long delta = endDate.getTime() - startDate.getTime();
+        if (delta < 1L * ONE_MINUTE) {
+            long seconds = toSeconds(delta);
+            return (seconds <= 0 ? 1 : seconds) + ONE_SECOND_AGO;
+        }
+        if (delta < 45L * ONE_MINUTE) {
+            long minutes = toMinutes(delta);
+            return (minutes <= 0 ? 1 : minutes) + ONE_MINUTE_AGO;
+        }
+        if (delta < 24L * ONE_HOUR) {
+            long hours = toHours(delta);
+            return (hours <= 0 ? 1 : hours) + ONE_HOUR_AGO;
+        }
+        if (delta < 48L * ONE_HOUR) {
+            return "昨天";
+        }
+        if (delta < 30L * ONE_DAY) {
+            long days = toDays(delta);
+            return (days <= 0 ? 1 : days) + ONE_DAY_AGO;
+        }
+        if (delta < 12L * 4L * ONE_WEEK) {
+            long months = toMonths(delta);
+            return (months <= 0 ? 1 : months) + ONE_MONTH_AGO;
+        } else {
+            long years = toYears(delta);
+            return (years <= 0 ? 1 : years) + ONE_YEAR_AGO;
+        }
+    }
+
+    private static long toSeconds(long date) {
+        return date / 1000L;
+    }
+
+    private static long toMinutes(long date) {
+        return toSeconds(date) / 60L;
+    }
+
+    private static long toHours(long date) {
+        return toMinutes(date) / 60L;
+    }
+
+    private static long toDays(long date) {
+        return toHours(date) / 24L;
+    }
+
+    private static long toMonths(long date) {
+        return toDays(date) / 30L;
+    }
+
+    private static long toYears(long date) {
+        return toMonths(date) / 365L;
     }
 
 

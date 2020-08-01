@@ -17,8 +17,8 @@ public class Journal {
     /**
      * 创建人
      */
-    @Column(name = "create_user")
-    private String createUser;
+    @Column(name = "create_user_id")
+    private Integer createUserId;
 
     /**
      * 日志类型 0 何亚培 1去投票

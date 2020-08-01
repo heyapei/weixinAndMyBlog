@@ -9,7 +9,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>日志列表</title>
+    <title th:text="'动态列表--'+${blogTypeMsg}"></title>
 
     <script src="/static/res/bootstrap/js/jQuery.js"></script>
     <!--引用公共的bootstrap的内容-->
@@ -27,11 +27,13 @@
 </head>
 <body>
 
+<!--<p th:text="${pageInfo}"></p>-->
+
 
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">趣互动</a>
+            <a class="navbar-brand" href="javascript:location.reload();">趣互动</a>
         </div>
     </div>
 </div>
@@ -48,56 +50,52 @@
 
                 <!--列表页面-->
 
-                <div class="blog-list-item clearfix">
+                <div class="blog-list-item clearfix" th:each="blogListVO,seqNum : ${pageInfo?.getList()}">
                     <div class="col-xs-5">
-                       <!-- <img src="/static/page/blog/img/blog.png">-->
+                        <!-- <img src="/static/page/blog/img/blog.png">-->
                         <img src="/static/res/lazyImgLoading/imglazyloadingtype1.gif"
-                             th:data-lazy="${weixinVoteUser?.getAvatarUrl()}">
+                             th:data-lazy="${#strings.isEmpty(blogListVO?.journalCoverImg) == true?null:blogListVO?.journalCoverImg}" alt="封面图">
                     </div>
                     <div class="col-xs-7">
-                        <a href="#" class="title">
-                            记录点滴，记录成长。用博客记录技术与经验的积累，在这里找到志同道合的朋友，编程的乐趣。
+                        <a th:href="@{'/go/showBlogContent/'+${blogListVO?.id}}" class="title" th:text="${blogListVO?.title}" target="_blank">
                         </a>
                         <div class="info">
                             <span class="avatar">
-                                <img src="/static/page/blog/img/1.jpg" alt="作者头像">
+                                <img src="/static/res/lazyImgLoading/imglazyloadingtype1.gif"
+                                     th:data-lazy="${blogListVO?.avatarImg}" alt=" ">
                             </span>
-                            <span>散人</span> |
-                            <span>2.8K</span>
+                            <span th:text="${blogListVO?.name}"></span> |
+                            <span th:text="${blogListVO?.viewNum}"></span>
                             <span class="glyphicon glyphicon-thumbs-up blog-hot" aria-hidden="true"></span> |
-                            <span>5分钟前</span>
+                            <span th:text="${#dates.format(blogListVO?.createTime, 'yyyy-MM-dd HH:mm')}"></span>
                         </div>
                     </div>
                 </div>
 
                 <!--列表页面 结束-->
 
+
                 <div class="container">
                     <div class="row clearfix">
                         <div class="col-md-12 column">
                             <ul class="pagination">
-                                <li>
-                                    <a href="#">Prev</a>
+
+                                <li th:class="${pageInfo?.isHasPreviousPage() == false }?'disabled' : ''"><a
+                                        th:href="|javascript:cp(${pageInfo?.getPageNum()-1})|">上一页</a>
                                 </li>
-                                <li>
-                                    <a href="#">1</a>
+
+                                <li th:each="navigatepageNum : ${pageInfo?.getNavigatepageNums()}"
+                                    th:class="${navigatepageNum == pageInfo?.getPageNum()}?'active' : ''">
+                                    <a th:href="|javascript:cp(${navigatepageNum})|"
+                                       th:text="${navigatepageNum}"></a>
                                 </li>
-                                <li>
-                                    <a href="#">2</a>
+
+                                <li th:class="${!pageInfo?.isHasNextPage()}?'disabled' : ''"><a
+                                        th:href="|javascript:cp(${pageInfo?.getPageNum()+1})|">下一页</a>
                                 </li>
-                                <li>
-                                    <a href="#">3</a>
-                                </li>
-                                <li>
-                                    <a href="#">4</a>
-                                </li>
-                                <li>
-                                    <a href="#">5</a>
-                                </li>
-                                <li>
-                                    <a href="#">Next</a>
-                                </li>
+
                             </ul>
+
                         </div>
                     </div>
                 </div>

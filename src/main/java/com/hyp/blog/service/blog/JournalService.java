@@ -1,7 +1,10 @@
 package com.hyp.blog.service.blog;
 
+import com.github.pagehelper.PageInfo;
 import com.hyp.blog.exception.MyDefinitionException;
 import com.hyp.blog.pojo.blog.model.Journal;
+import com.hyp.blog.pojo.blog.query.BlogListQuery;
+import com.hyp.blog.pojo.blog.vo.BlogShowVO;
 
 /**
  * @Author 何亚培
@@ -11,16 +14,45 @@ import com.hyp.blog.pojo.blog.model.Journal;
  */
 public interface JournalService {
 
+    /**
+     * 浏览日志信息
+     *
+     * @param pkId
+     * @return
+     * @throws MyDefinitionException
+     */
+    BlogShowVO showBlogByPkId(Integer pkId) throws MyDefinitionException;
+
+
+    /**
+     * 根据查询条件 分页查询 日志列表
+     *
+     * @param blogListQuery
+     * @return
+     * @throws MyDefinitionException
+     */
+    PageInfo selectPageInfoByBlogListQuery(BlogListQuery blogListQuery) throws MyDefinitionException;
+
 
     /*通用*/
 
     /**
      * 获取日志详细信息
+     *
      * @param pkId
      * @return
      * @throws MyDefinitionException
      */
     Journal selectJournalById(Integer pkId) throws MyDefinitionException;
 
+
+    /**
+     * 根据主键更新日志信息
+     *
+     * @param journal 日志信息（含主键）
+     * @return 影响行数
+     * @throws MyDefinitionException
+     */
+    Integer updateSelectiveByPkId(Journal journal) throws MyDefinitionException;
 
 }

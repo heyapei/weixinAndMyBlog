@@ -68,4 +68,12 @@ public interface MyIpMacUtilService {
     String longToIP(long longIp);
 
 
+    /**
+     * 获取当前服务器地址
+     * @param httpServletRequest
+     * @return
+     */
+    String serverAddress(HttpServletRequest httpServletRequest);
+
+
 }

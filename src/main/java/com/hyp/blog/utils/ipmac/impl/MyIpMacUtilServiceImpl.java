@@ -200,6 +200,18 @@ public class MyIpMacUtilServiceImpl implements MyIpMacUtilService {
         return sb.toString();
     }
 
+    /**
+     * 获取当前服务器地址
+     *
+     * @param httpServletRequest
+     * @return
+     */
+    @Override
+    public String serverAddress(HttpServletRequest httpServletRequest) {
+        String basePath = httpServletRequest.getScheme() + "://" + httpServletRequest.getServerName() + httpServletRequest.getContextPath() + "/";
+        return basePath;
+    }
+
     private static boolean isInner(long userIp, long begin, long end) {
         return (userIp >= begin) && (userIp <= end);
     }
