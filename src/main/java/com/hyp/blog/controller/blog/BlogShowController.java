@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping(value = {"/"})
 @Slf4j
-public class BlogListController {
+public class BlogShowController {
 
     @ApiOperation("按照日志类型，进入对应的日志首页")
     @GetMapping("{blogType}")

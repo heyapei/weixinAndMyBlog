@@ -173,8 +173,8 @@
     <!--<springProfile name="dev">
         <logger name="com.sdcm.pmp" level="debug"/>
     </springProfile>-->
-    <logger name="com.hyp.blogmaster.mapper" level="DEBUG"/>
-    <logger name="com.hyp.blogmaster.shiro.mapper" level="DEBUG"/>
+    <logger name="com.hyp.blog.mapper.weixinmanager" level="DEBUG"/>
+    <logger name="com.hyp.blog.mapper.blog" level="DEBUG"/>
     <root level="info">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="DEBUG_FILE" />

@@ -1,4 +1,4 @@
-package com.hyp.blog.pojo.modal;
+package com.hyp.blog.pojo.blog.model;
 
 /**
  * @Author 何亚培

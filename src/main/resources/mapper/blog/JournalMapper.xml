@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hyp.blog.mapper.JournalMapper" >
-  <resultMap id="BaseResultMap" type="com.hyp.blog.pojo.modal.Journal" >
+<mapper namespace="com.hyp.blog.mapper.blog.JournalMapper" >
+  <resultMap id="BaseResultMap" type="com.hyp.blog.pojo.blog.model.Journal" >
     <!--
       WARNING - @mbg.generated
     -->
