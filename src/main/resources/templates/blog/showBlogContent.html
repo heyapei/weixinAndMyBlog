@@ -30,16 +30,13 @@
 <!--引入返回顶部按钮-->
 <div th:include="/inc/commonutil/backtotop :: backtotop"></div>
 
-<div class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="javascript:location.reload();">趣互动</a>
-        </div>
-    </div>
-</div>
+<!--头部信息-->
+<div th:include="inc/head/blogHead :: head"></div>
+
+
 <div class="container">
     <div class="col-sm-12">
-        <h1 class="blog-title"  th:text="${blogShowVO?.title}"></h1>
+        <h1 class="blog-title" th:text="${blogShowVO?.title}"></h1>
         <div class="blog-info">
             <span class="avatar">
               <img src="/static/res/lazyImgLoading/imglazyloadingtype1.gif"
@@ -58,11 +55,11 @@
             <blockquote>
                 <p th:text="${blogShowVO?.explainWord}"></p>
             </blockquote>
-            <img src="/static/res/lazyImgLoading/imglazyloadingtype1.gif"
-                 th:data-lazy="${#strings.isEmpty(blogShowVO?.journalCoverImg) == true?null:blogShowVO?.journalCoverImg}"
-                 alt=" ">
+            <!-- <img src="/static/res/lazyImgLoading/imglazyloadingtype1.gif"
+                  th:data-lazy="${#strings.isEmpty(blogShowVO?.journalCoverImg) == true?null:blogShowVO?.journalCoverImg}"
+                  alt=" ">-->
 
-            <div  th:utext="${blogShowVO?.journalContent}">
+            <div th:utext="${blogShowVO?.journalContent}">
 
             </div>
 

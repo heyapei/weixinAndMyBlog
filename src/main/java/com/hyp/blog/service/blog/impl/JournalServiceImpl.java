@@ -105,7 +105,7 @@ public class JournalServiceImpl implements JournalService {
         }
 
         Boolean enumKeyRight = MyEnumUtil.enumKeyRight(blogListQuery.getJournalType(), JournalModalJournalTypeEnum.class);
-        log.error("判断结果：{}", enumKeyRight);
+        //log.error("判断结果：{}", enumKeyRight);
         if (!enumKeyRight) {
             throw new MyDefinitionException("我们还没有您想要的日志内容");
         }

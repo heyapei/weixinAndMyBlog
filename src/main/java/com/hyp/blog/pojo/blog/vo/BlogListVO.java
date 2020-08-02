@@ -21,6 +21,7 @@ public class BlogListVO {
     private Integer viewNum;
     private Date createTime;
     private Integer journalType;
+    private Integer showOrder;
     private String journalTypeMsg;
 
     /**创建人信息*/
