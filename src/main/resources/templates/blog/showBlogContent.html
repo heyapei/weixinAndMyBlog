@@ -45,8 +45,8 @@
             </span>
             <span th:text="${blogShowVO?.name}"></span> |
             <span th:text="${blogShowVO?.viewNum}+'热度'"></span> |
-            <span th:text="${#dates.format(blogShowVO?.createTime, 'yyyy-MM-dd HH:mm')}">5分钟前</span>
-            <span th:text="${blogShowVO?.dateDiff}"></span>
+            <span th:text="${#dates.format(blogShowVO?.updateTime, 'yyyy-MM-dd HH:mm')}" th:title="'创建于：'+${#dates.format(blogShowVO?.createTime, 'yyyy-MM-dd HH:mm')}+'  '+${blogShowVO?.createDateDiff}"></span>
+            <span th:text="${blogShowVO?.updateDateDiff}"></span>
             <label class="label label-info" th:each="journalClassify : ${blogShowVO?.journalClassify}">
                 <span th:text="${journalClassify}"></span>
             </label>

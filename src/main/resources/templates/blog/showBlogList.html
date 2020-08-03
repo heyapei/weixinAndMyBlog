@@ -65,7 +65,7 @@
                             <span th:text="${blogListVO?.name}"></span> |
                             <span th:text="${blogListVO?.viewNum}"></span>
                             <span class="glyphicon glyphicon-thumbs-up blog-hot" aria-hidden="true"></span> |
-                            <span th:text="${#dates.format(blogListVO?.createTime, 'yyyy-MM-dd HH:mm')}"></span>
+                            <span th:text="${#dates.format(blogListVO?.updateTime, 'yyyy-MM-dd HH:mm')}" th:title="更新时间" ></span>
 
                             <span th:if="${blogListVO?.showOrder>0}">
                                  <label class="label label-danger">置顶</label>

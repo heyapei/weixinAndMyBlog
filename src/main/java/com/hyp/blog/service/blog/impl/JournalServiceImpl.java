@@ -74,7 +74,8 @@ public class JournalServiceImpl implements JournalService {
             // do nothing
         }
 
-        blogShowVO.setDateDiff(MyDateUtil.formatTwoDateFormat(blogShowVO.getCreateTime(), new Date()));
+        blogShowVO.setCreateDateDiff(MyDateUtil.formatTwoDateFormat(blogShowVO.getCreateTime(), new Date()));
+        blogShowVO.setUpdateDateDiff(MyDateUtil.formatTwoDateFormat(blogShowVO.getUpdateTime(), new Date()));
 
         blogShowVO.setBlogTypeMsg(MyEnumUtil.getByIntegerTypeCode(JournalModalJournalTypeEnum.class, "getCode", journal.getJournalType()).getMsg());
 
@@ -116,8 +117,8 @@ public class JournalServiceImpl implements JournalService {
         criteria.andEqualTo("journalType", blogListQuery.getJournalType());
         /*排序*/
         example.orderBy("showOrder").desc();
-        example.orderBy("createTime").desc();
         example.orderBy("updateTime").desc();
+        example.orderBy("createTime").desc();
         PageHelper.startPage(blogListQuery.getPageNum(), blogListQuery.getPageSize());
         List<Journal> journalList = null;
         try {

@@ -20,6 +20,10 @@ public class BlogListVO {
     private Integer commentNum;
     private Integer viewNum;
     private Date createTime;
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
     private Integer journalType;
     private Integer showOrder;
     private String journalTypeMsg;

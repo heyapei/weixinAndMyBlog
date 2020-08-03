@@ -26,7 +26,17 @@ public class BlogShowVO {
     /**
      * 创建距今多久
      */
-    private String dateDiff;
+    private String createDateDiff;
+
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
+
+    /**
+     * 更新距今多久
+     */
+    private String updateDateDiff;
 
 
     /**
